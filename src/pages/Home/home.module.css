@@ -1,0 +1,8 @@
+.modalContainer {
+  padding: 4em;
+  border: solid 1px #ececec;
+  border-radius: 8px;
+  background-color: #ffffff;
+  filter: drop-shadow(0 0 10px rgb(0 0 0 / 0.1));
+  max-width: 20em;
+}
