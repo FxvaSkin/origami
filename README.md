@@ -1,2 +1,2 @@
 # origami
-React components for manage floating elements
+React components & hooks for manage floating elements
