@@ -1,4 +1,4 @@
-import * as React from 'react'
+import React from 'react'
 import { FloatProvider } from 'components'
 import HomePage from 'pages/Home'
 

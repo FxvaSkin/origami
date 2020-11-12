@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect, useRef } from 'react'
 import cx from 'classnames'
 import styles from './modal.module.css'
 import defaultAnimations from './modalDefaultAnimations.module.css'
@@ -20,14 +20,20 @@ const ModalBody = React.forwardRef<HTMLDivElement, ModalBodyProps>(
     const { ref: floatRef, isTopFloat } = useFloat()
     const combinedRef = useCombinedRefs([floatRef, ref])
     const handleClickOitside = () => {
-      if (onClose) {
+      if (typeof onClose === 'function') {
         onClose()
       }
     }
     useClickOutside([combinedRef], isTopFloat() ? handleClickOitside : null)
+
     return (
       <div className={styles.wrapper}>
-        <div ref={combinedRef} className={cx(classes, containerClassName)}>
+        <div
+          role="dialog"
+          // tabIndex={-1}
+          ref={combinedRef}
+          className={cx(classes, containerClassName)}
+        >
           {children}
         </div>
       </div>
@@ -50,7 +56,7 @@ const Modal: React.FC<Props> = ({
   onClose,
   target,
   children,
-  backdrop = true,
+  backdrop = false,
   containerClassName,
   animations,
 }) => {
