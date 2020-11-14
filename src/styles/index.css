@@ -23,7 +23,4 @@ body {
 
 *:focus {
   background-color: hotpink !important;
-  display: block !important;
-  width: 20px !important;
-  height: 20px !important;
 }

@@ -1,23 +1,13 @@
 import React, { useCallback, useState } from 'react'
 import { FloatContext } from './FloatContext'
-import { useLockBodyScroll } from 'hooks/useLockBodyScroll'
+import { useLockBodyScroll, useInert } from 'hooks'
 
-interface Props {
-  children: React.ReactNode
-}
-
-const FloatProvider: React.FC<Props> = ({ children }) => {
+const FloatProvider: React.FC = ({ children }) => {
   const [floats, setFloats] = useState<React.RefObject<HTMLDivElement>[]>([])
 
   const lock = Boolean(floats.length)
   useLockBodyScroll(lock)
-
-  const rootElement = document.getElementById('root')
-  if (lock) {
-    rootElement?.setAttribute('inert', '')
-  } else {
-    rootElement?.removeAttribute('inert')
-  }
+  useInert(lock, floats)
 
   const handleAddFloat = useCallback((ref: React.RefObject<HTMLDivElement>) => {
     setFloats(old => [...old, ref])
