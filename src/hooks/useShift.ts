@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import cx from 'classnames'
 
-export interface IClassNames {
+export interface Animations {
   enter: string
   enterActive?: string
   leave: string
@@ -10,7 +10,7 @@ export interface IClassNames {
 
 const useShift = (
   shouldExist: boolean,
-  classNames: IClassNames,
+  classNames: Animations,
   mountOnEnter: boolean = false,
   unmountOnLeave: boolean = true,
 ) => {

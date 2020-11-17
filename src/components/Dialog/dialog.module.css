@@ -1,0 +1,9 @@
+.root {
+  background-color: #ffffff;
+  min-width: 25em;
+  min-height: 20em;
+  border-radius: 1em;
+  padding: 4em;
+  box-sizing: border-box;
+  box-shadow: 0 0 10px rgb(0 0 0 / 0.1);
+}

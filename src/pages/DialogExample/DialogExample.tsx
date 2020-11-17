@@ -11,7 +11,7 @@ const DialogExample: React.FC<Props> = () => {
   return (
     <div>
       <button onClick={openDialog}>Open Dialog</button>
-      <Dialog isOpen={isOpen} onClose={closeDialog} backdrop>
+      <Dialog isOpen={isOpen} onClose={closeDialog}>
         Dialog
       </Dialog>
     </div>
