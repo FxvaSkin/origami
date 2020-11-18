@@ -1,7 +1,13 @@
 import React from 'react'
 
 const Home: React.FC = () => {
-  return <div>Home</div>
+  return (
+    <div>
+      <ul>
+        <div>HOME</div>
+      </ul>
+    </div>
+  )
 }
 
-export default Home
+export { Home }

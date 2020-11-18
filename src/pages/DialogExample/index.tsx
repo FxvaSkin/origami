@@ -1,1 +1,1 @@
-export { DialogExample } from './DialogExample'
+export { DialogExample as default } from './DialogExample'
