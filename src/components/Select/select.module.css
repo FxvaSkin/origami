@@ -1,0 +1,25 @@
+.root {
+  background-color: pink;
+  border: 1px solid darkslategray;
+}
+.item {
+  background-color: white;
+}
+
+.selected {
+  background-color: blueviolet;
+}
+
+.layout {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.layout.bottom {
+  padding-top: 2em;
+}
+
+.layout.top {
+  padding-bottom: 2em;
+}

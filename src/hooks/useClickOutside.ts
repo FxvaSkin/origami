@@ -1,7 +1,7 @@
 import { useEffect, useCallback } from 'react'
 
 const useClickOutside = (
-  refs: React.RefObject<HTMLDivElement>[],
+  refs: React.RefObject<HTMLElement>[],
   callback: (() => void) | null,
 ) => {
   const handleMouseUp = useCallback(

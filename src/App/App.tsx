@@ -5,6 +5,7 @@ import { Layout, Waiting } from 'components'
 
 const LazyHomePage = lazy(() => import('pages/Home'))
 const LazyExamplesPage = lazy(() => import('pages/Examples'))
+const LazyDocumentationPage = lazy(() => import('pages/Documentation'))
 
 const routes = {
   '/': () => (
@@ -15,6 +16,11 @@ const routes = {
   '/examples*': () => (
     <Waiting>
       <LazyExamplesPage />
+    </Waiting>
+  ),
+  '/documentation': () => (
+    <Waiting>
+      <LazyDocumentationPage />
     </Waiting>
   ),
 }

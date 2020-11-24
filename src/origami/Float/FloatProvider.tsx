@@ -7,7 +7,7 @@ const FloatProvider: React.FC = ({ children }) => {
 
   const lock = Boolean(floats.length)
   useLockBodyScroll(lock)
-  useInert(lock, floats)
+  // useInert(lock, floats)
 
   const handleAddFloat = useCallback((ref: React.RefObject<HTMLDivElement>) => {
     setFloats(old => [...old, ref])

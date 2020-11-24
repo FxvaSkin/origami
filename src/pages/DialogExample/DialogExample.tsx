@@ -1,8 +1,14 @@
 import React from 'react'
-import { Dialog } from 'components'
+import { Dialog, Select } from 'components'
 import { useBoolean } from 'hooks'
 
 interface Props {}
+
+const options = [
+  { key: 'fire', title: 'Fire' },
+  { key: 'water', title: 'Water' },
+  { key: 'electric', title: 'Electric' },
+]
 
 const DialogExample: React.FC<Props> = () => {
   const [
@@ -23,7 +29,7 @@ const DialogExample: React.FC<Props> = () => {
           onClose={closeDialog2}
           style={{ minWidth: '8em', minHeight: '7em' }}
         >
-          Dialog 2
+          <Select options={options} selectedKeys={1} />
         </Dialog>
       </Dialog>
     </div>

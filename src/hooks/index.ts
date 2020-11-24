@@ -6,5 +6,6 @@ export { useShift } from './useShift'
 export { useInert } from './useInert'
 export { useConst } from './useConst'
 export { useBoolean } from './useBoolean'
+export { useDropdownPosition } from './useDropdownPosition'
 
 export type { Animations } from './useShift'

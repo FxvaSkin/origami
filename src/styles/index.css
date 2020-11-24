@@ -20,7 +20,3 @@ body {
     scroll-behavior: auto !important;
   }
 }
-
-*:focus {
-  background-color: hotpink !important;
-}
