@@ -37,7 +37,6 @@ const Nested: React.FC = () => {
         isOpen={isOpen}
         onClose={handleClose}
         className={styles.root}
-        layout="right"
       >
         <option className={cx(styles.item)}>Kek</option>
       </Dropdown>

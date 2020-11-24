@@ -2,7 +2,7 @@ import React from 'react'
 import { createPortal } from 'react-dom'
 
 interface Props {
-  to?: HTMLElement
+  to?: HTMLElement | null
   children?: React.ReactNode
 }
 

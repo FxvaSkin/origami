@@ -1,6 +1,7 @@
 import React, { useRef } from 'react'
+import cx from 'classnames'
 import { FiSearch as SearchIcon } from 'react-icons/fi'
-import { A as Link } from 'hookrouter'
+import { A as Link, usePath } from 'hookrouter'
 import styles from './header.module.css'
 import { useBoolean } from 'hooks'
 import { Dropdown } from 'origami'
@@ -17,6 +18,7 @@ const Header: React.FC = () => {
     dropdownIsOpen,
     { setTrue: openDropdown, setFalse: closeDropdown },
   ] = useBoolean(false)
+  const path = usePath()
   return (
     <header className={styles.root}>
       <div className={styles.content}>
@@ -25,7 +27,12 @@ const Header: React.FC = () => {
           <ul className={styles.navList}>
             {navItems.map(item => (
               <li key={item.key}>
-                <Link href={item.to} className={styles.link}>
+                <Link
+                  href={item.to}
+                  className={cx(styles.link, {
+                    [styles.active]: path === item.to,
+                  })}
+                >
                   {item.title}
                 </Link>
               </li>

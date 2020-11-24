@@ -17,7 +17,7 @@ export interface DropdownBodyProps {
   closeOnEscape?: boolean
   closeOnOutsideClick?: boolean
   root: React.RefObject<HTMLElement>
-  layout?: 'right' | 'bottom'
+  // layout?: 'right' | 'bottom'
   ignore?: Array<React.RefObject<HTMLElement>>
   style?: React.CSSProperties
   className?: string
@@ -37,7 +37,7 @@ const DropdownBody = React.forwardRef<HTMLDivElement, DropdownBodyProps>(
       root,
       style,
       layoutClassName,
-      layout = 'bottom',
+      // layout = 'bottom',
       ignore = [],
     },
     ref,
@@ -56,7 +56,7 @@ const DropdownBody = React.forwardRef<HTMLDivElement, DropdownBodyProps>(
       closeOnOutsideClick && isTopFloat() ? handleClose : null,
     )
     useKeyUp('Escape', closeOnEscape && isTopFloat() ? handleClose : null)
-    const position = useDropdownPosition(root, layoutRef, layout)
+    const position = useDropdownPosition(root, layoutRef)
     return (
       <div
         className={cx(defaultLayout.root, layoutClassName)}
@@ -73,7 +73,7 @@ const DropdownBody = React.forwardRef<HTMLDivElement, DropdownBodyProps>(
 
 interface Props extends DropdownBodyProps {
   isOpen: boolean
-  target?: HTMLElement
+  target?: HTMLElement | null
   animations?: Animations
   children?: React.ReactNode
 }
